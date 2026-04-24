@@ -1,0 +1,5 @@
+2026-04-23 20:01:04,002 - INFO - Pipeline started
+2026-04-23 20:01:04,005 - INFO - Data loaded
+2026-04-23 20:01:04,007 - INFO - Data cleaned
+2026-04-23 20:01:04,008 - INFO - Validation completed
+2026-04-23 20:01:04,008 - INFO - Pipeline finished successfully
