@@ -1,5 +1,6 @@
 import logging
 
+# Configure logging
 logging.basicConfig(
     filename="pipeline.log",
     level=logging.INFO,
@@ -7,4 +8,5 @@ logging.basicConfig(
 )
 
 def log(message):
-    logging.info(message)
+    print(message)            # Show in terminal
+    logging.info(message)     # Save in log file

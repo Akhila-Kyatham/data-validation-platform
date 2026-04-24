@@ -3,27 +3,34 @@ from transform import clean_data
 from validate import row_count_check, schema_check, null_check
 from report import generate_report
 from logger import log
+from config import DATA_PATH
 
-print("Starting pipeline...")
 
-# Step 1: Load data
-log("Pipeline started")
-source = load_data("../data/raw.csv")
-log("Data loaded")
+def main_pipeline():
+    log("Pipeline started")
 
-# Step 2: Clean data
-target = clean_data(source)
-log("Data cleaned")
+    # Load data
+    source = load_data(DATA_PATH)
+    log("Data loaded")
 
-# Step 3: Validation checks
-results = {
-    "Row Count": row_count_check(source, target),
-    "Schema": schema_check(target, list(source.columns)),
-    "Null Check": null_check(target)
-}
-log("Validation completed")
+    # Transform data
+    target = clean_data(source)
+    log("Data cleaned")
 
-# Step 4: Generate report
-generate_report(results)
+    # Validation checks
+    results = {
+        "Row Count": row_count_check(source, target),
+        "Schema": schema_check(target, list(source.columns)),
+        "Null Check": null_check(target)
+    }
 
-log("Pipeline finished successfully")
+    log("Validation completed")
+
+    # Generate report
+    generate_report(results)
+
+    log("Pipeline finished successfully")
+
+
+if __name__ == "__main__":
+    main_pipeline()

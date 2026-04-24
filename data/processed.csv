@@ -1,0 +1,5 @@
+id,name,age,salary,validation_status
+1,Akhila,25.0,50000,FAIL
+2,Varshath,30.0,60000,FAIL
+3,Abhinav,,70000,FAIL
+3,Rishmitha,,70000,FAIL
